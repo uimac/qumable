@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{04199BB9-1680-4323-AAB7-D05E5118A198}</ProjectGuid>
+    <RootNamespace>qumable</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)out/$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)out/$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)out/$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)out/$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib/boost/include;$(SolutionDir)lib/glew/include;$(SolutionDir)lib/glfw/include;$(SolutionDir)lib/qumasdk/include;$(SolutionDir)src/umbase;$(SolutionDir)src/umimage;$(SolutionDir)src/umdraw;$(SolutionDir)src/umgui;$(SolutionDir)src/umresource;$(SolutionDir)src/umrt;$(SolutionDir)src/umwsio;$(SolutionDir)lib/umio/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;GLEW_STATIC;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;glu32.lib;shlwapi.lib;winmm.lib;soil.lib;umio_fbx2014.lib;msgpack.lib;libfbxsdk-md.lib;snappy.lib;QmPdkDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/umio/$(Platform)/$(Configuration)/;$(SolutionDir)lib/qumasdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/msgpack/$(Platform)/$(Configuration)/;$(SolutionDir)lib/snappy/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glfw/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glew/$(Platform)/$(Configuration)/;$(SolutionDir)lib/soil/$(Platform)/$(Configuration)/;$(SolutionDir)lib/fbxsdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/boost/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib/boost/include;$(SolutionDir)lib/glew/include;$(SolutionDir)lib/glfw/include;$(SolutionDir)lib/qumasdk/include;$(SolutionDir)src/umbase;$(SolutionDir)src/umimage;$(SolutionDir)src/umdraw;$(SolutionDir)src/umgui;$(SolutionDir)src/umresource;$(SolutionDir)src/umrt;$(SolutionDir)src/umwsio;$(SolutionDir)lib/umio/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;GLEW_STATIC;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;glu32.lib;shlwapi.lib;winmm.lib;soil.lib;umio_fbx2014.lib;msgpack.lib;libfbxsdk-md.lib;snappy.lib;QmPdkDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/umio/$(Platform)/$(Configuration)/;$(SolutionDir)lib/qumasdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/msgpack/$(Platform)/$(Configuration)/;$(SolutionDir)lib/snappy/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glfw/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glew/$(Platform)/$(Configuration)/;$(SolutionDir)lib/soil/$(Platform)/$(Configuration)/;$(SolutionDir)lib/fbxsdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/boost/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib/boost/include;$(SolutionDir)lib/glew/include;$(SolutionDir)lib/glfw/include;$(SolutionDir)lib/qumasdk/include;$(SolutionDir)src/umbase;$(SolutionDir)src/umimage;$(SolutionDir)src/umdraw;$(SolutionDir)src/umgui;$(SolutionDir)src/umresource;$(SolutionDir)src/umrt;$(SolutionDir)src/umwsio;$(SolutionDir)lib/umio/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;GLEW_STATIC;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;glu32.lib;shlwapi.lib;winmm.lib;soil.lib;umio_fbx2014.lib;msgpack.lib;libfbxsdk-md.lib;snappy.lib;QmPdkDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/umio/$(Platform)/$(Configuration)/;$(SolutionDir)lib/qumasdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/msgpack/$(Platform)/$(Configuration)/;$(SolutionDir)lib/snappy/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glfw/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glew/$(Platform)/$(Configuration)/;$(SolutionDir)lib/soil/$(Platform)/$(Configuration)/;$(SolutionDir)lib/fbxsdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/boost/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)lib/boost/include;$(SolutionDir)lib/glew/include;$(SolutionDir)lib/glfw/include;$(SolutionDir)lib/qumasdk/include;$(SolutionDir)src/umbase;$(SolutionDir)src/umimage;$(SolutionDir)src/umdraw;$(SolutionDir)src/umgui;$(SolutionDir)src/umresource;$(SolutionDir)src/umrt;$(SolutionDir)src/umwsio;$(SolutionDir)lib/umio/include</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32_LEAN_AND_MEAN;GLEW_STATIC;GLFW_EXPOSE_NATIVE_WIN32;GLFW_EXPOSE_NATIVE_WGL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glfw3.lib;glew32.lib;opengl32.lib;glu32.lib;shlwapi.lib;winmm.lib;soil.lib;umio_fbx2014.lib;msgpack.lib;libfbxsdk-md.lib;snappy.lib;QmPdkDll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib/umio/$(Platform)/$(Configuration)/;$(SolutionDir)lib/qumasdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/msgpack/$(Platform)/$(Configuration)/;$(SolutionDir)lib/snappy/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glfw/$(Platform)/$(Configuration)/;$(SolutionDir)lib/glew/$(Platform)/$(Configuration)/;$(SolutionDir)lib/soil/$(Platform)/$(Configuration)/;$(SolutionDir)lib/fbxsdk/$(Platform)/$(Configuration)/;$(SolutionDir)lib/boost/$(Platform)/$(Configuration)/</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\umbase\umbase.vcxproj">
+      <Project>{8b753bf7-2ccf-4324-9ac4-28863a3e1422}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umdraw\umdraw.vcxproj">
+      <Project>{ed1e1177-d7a6-47e1-94d6-d68ace53768c}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umgui\umgui.vcxproj">
+      <Project>{f2e1c5e5-c9aa-4c26-bfb0-cd17ed03c3d7}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umimage\umimage.vcxproj">
+      <Project>{85280144-32e7-4ca9-b225-157f1a707748}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umresource\umresource.vcxproj">
+      <Project>{08b1c99a-9012-4274-9afd-da461e59dbc8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umrt\umrt.vcxproj">
+      <Project>{098446cd-e308-44de-bbd8-2b8273feae3a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\umwsio\umwsio.vcxproj">
+      <Project>{81320559-759a-4a44-843b-308757ea5fba}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\qumable\UMMain.h" />
+    <ClInclude Include="..\..\src\qumable\UMMappingGUI.h" />
+    <ClInclude Include="..\..\src\qumable\UMQuma.h" />
+    <ClInclude Include="..\..\src\qumable\UMViewer.h" />
+    <ClInclude Include="..\..\src\qumable\UMWindow.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\qumable\UMMain.cpp" />
+    <ClCompile Include="..\..\src\qumable\UMMappingGUI.cpp" />
+    <ClCompile Include="..\..\src\qumable\UMQuma.cpp" />
+    <ClCompile Include="..\..\src\qumable\UMViewer.cpp" />
+    <ClCompile Include="..\..\src\qumable\UMWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="qumable.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="qumable.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
